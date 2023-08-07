@@ -1,9 +1,16 @@
+// import { useState } from "react";
+import Header from "./Header";
+import CohortList from "./CohortList";
 
 function App() {
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-    </div>
+    <>
+        <Header />
+      <div>
+        <CohortList />
+        {/* <p>Hello</p> */}
+      </div>
+    </>
   );
 }
 

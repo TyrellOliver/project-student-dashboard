@@ -1,0 +1,13 @@
+.CohortList{
+    display: inline-block;
+    border: 1px solid black;
+}
+
+hr{
+    background-color: #388c49;
+    padding: 0.5px
+}
+
+.list{
+    overflow: scroll;
+}
