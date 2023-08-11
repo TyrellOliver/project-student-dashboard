@@ -1,9 +1,18 @@
-const CohortCard = () => {
+import StudentCard from "./StudentCard";
+
+const CohortCard = (props) => {
+  // console.log(
+  //   "This should be the data passed in as props: ",
+  //   props.studentData
+  // );
+  const studentCard = props.studentData;
+  // console.log(studentCard.map((element)=>{return element.names.preferredName}))
+
   return (
     <div className="CohortCard">
-      <p>Name:</p>
-      <p>Email:</p>
-      <p style={{ color: "green" }}>Birthday:</p>
+      {studentCard.map((student) => (
+        <StudentCard student={student} key={student.id} />
+      ))}
     </div>
   );
 };
