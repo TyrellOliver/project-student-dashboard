@@ -5,6 +5,7 @@
 
 .App{
     display: flex;
+
 }
 
 hr{
@@ -14,5 +15,9 @@ hr{
 
 .list{
     overflow: scroll;
-    height: 500px;
+    /* height: 500px; */
+}
+
+.CohortCard{
+    border: 1px solid black;
 }

@@ -1,15 +1,31 @@
 import { useState } from "react";
 
-function OnTrack() {}
-
 const StudentCard = (props) => {
   const [detailsVisible, setDetailsVisible] = useState(false);
 
   const student = props.student;
+  // console.log("Every student': ", student)
 
   const isOnTrack = true;
 
   const detailsText = "Details to come";
+
+  const toggleDetails = () => {
+    setDetailsVisible(!detailsVisible);
+  };
+
+  function onTrack(student) {
+    const resume = student.certifications.resume;
+    const linkedIn = student.certifications.linkedIn;
+    const gitHub = student.certifications.github;
+    const interviews = student.certifications.mockInterviews;
+    // console.log("Every student's certification: ", certifications)
+    console.log("Every student's resume: ", resume);
+    if (resume === false) {
+      return false;
+    }
+  }
+  // console.log(onTrack(student))
 
   return (
     <div key={student.id}>
@@ -20,12 +36,8 @@ const StudentCard = (props) => {
       <p>{student.username}</p>
       <p style={{ color: "green" }}>Birthday:{student.dob}</p>
       {isOnTrack ? <p>OnTrack</p> : null}
-      <button
-        onClick={() => {
-          setDetailsVisible(true);
-        }}
-      >
-        Show More...
+      <button onClick={toggleDetails}>
+        {detailsVisible ? "...Show Less" : "Show More..."}
       </button>
       {detailsVisible ? <p>{detailsText}</p> : null}
     </div>
